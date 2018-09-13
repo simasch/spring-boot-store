@@ -1,6 +1,5 @@
 package io.seventytwo.springbootstore.repository;
 
-import io.seventytwo.springbootstore.entity.Customer;
 import io.seventytwo.springbootstore.entity.Product;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -22,6 +21,13 @@ public class ProductRepositoryTest {
     @Test
     public void findAll() {
         List<Product> list = productRepository.findAll();
+
+        assertEquals(0, list.size());
+    }
+
+    @Test
+    public void findAllByTitleAndDescription() {
+        List<Product> list = productRepository.findAllByTitleLikeOrDescriptionLike("a", "b");
 
         assertEquals(0, list.size());
     }
