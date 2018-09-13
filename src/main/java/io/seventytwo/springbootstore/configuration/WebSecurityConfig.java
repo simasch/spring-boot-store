@@ -24,7 +24,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/api/**").hasRole("USER")
                 .antMatchers("/**").hasRole("USER")
                 .anyRequest().authenticated()
-                .and().formLogin().loginPage("/login").permitAll();
+                .and().httpBasic()
+                .and().formLogin().loginPage("/login").permitAll()
+                .and().csrf().disable();
     }
 
     @Bean

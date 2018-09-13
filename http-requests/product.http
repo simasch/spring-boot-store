@@ -1,9 +1,11 @@
 GET http://localhost:8080/api/products
+Authorization: Basic dXNlcjpzdG9yZQ==
 Accept: application/json
 
 ###
 
 POST http://localhost:8080/api/products
+Authorization: Basic dXNlcjpzdG9yZQ==
 Content-Type: application/json
 
 {
