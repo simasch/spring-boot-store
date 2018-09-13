@@ -1,6 +1,5 @@
 package io.seventytwo.springbootstore.repository;
 
-import io.seventytwo.springbootstore.entity.Customer;
 import io.seventytwo.springbootstore.entity.PurchaseOrder;
 import org.junit.Test;
 import org.junit.runner.RunWith;
