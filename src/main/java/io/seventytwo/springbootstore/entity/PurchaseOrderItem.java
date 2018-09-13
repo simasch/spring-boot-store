@@ -14,6 +14,11 @@ public class PurchaseOrderItem {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
+    private Integer quantity;
+
     @ManyToOne(fetch = FetchType.LAZY)
     private PurchaseOrder purchaseOrder;
+
+    @ManyToOne
+    private Product product;
 }

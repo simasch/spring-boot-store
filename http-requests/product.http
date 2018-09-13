@@ -1,0 +1,16 @@
+GET http://localhost:8080/api/product
+Accept: application/json
+
+###
+
+POST http://localhost:8080/api/product
+Content-Type: application/json
+
+{
+  "productNumber": "07436",
+  "title": "Läufer Radierer Plast, 1 Stück, 45 x 19 x 9 mm, n/v, 140",
+  "description": "Radierer aus transparentem Kunststoff ideal für Blei- und Farbstifte. Wird vor allem von Zeichnern, Architekten und Schülern benutzt, sehr papierschonend und schmierfrei.",
+  "price": 0.80
+}
+
+###
