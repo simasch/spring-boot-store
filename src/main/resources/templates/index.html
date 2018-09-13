@@ -11,7 +11,7 @@
 <div class="container">
     <div class="row">
         <div class="col-lg">
-            <h1>Welcome to the Store</h1>
+            <h1 th:text="#{messages.welcome}">Welcome to the Store</h1>
 
             <div class="row">
                 <div class="col-lg-4" th:each="product : ${products}">
@@ -28,7 +28,7 @@
                             </table>
 
                             <div style="vertical-align: bottom;">
-                                <a href="#" class="btn btn-primary">Add to basket</a>
+                                <a href="#" class="btn btn-primary" th:text="#{messages.add_to_basket}">Add to basket</a>
                             </div>
                         </div>
                     </div>

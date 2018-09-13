@@ -11,16 +11,16 @@
 <div class="container">
     <div class="row">
         <div class="col-lg">
-            <h1>Products</h1>
+            <h1 th:text="#{messages.products}">Products</h1>
 
             <table class="table table-hover">
                 <thead>
                 <tr>
-                    <th>Number</th>
-                    <th>Title</th>
-                    <th>Description</th>
-                    <th>Price</th>
-                    <th><a th:href="@{/products/new}">Add</a></th>
+                    <th th:text="#{messages.number}">Number</th>
+                    <th th:text="#{messages.title}">Title</th>
+                    <th th:text="#{messages.description}">Description</th>
+                    <th th:text="#{messages.price}">Price</th>
+                    <th><a th:href="@{/products/new}" th:text="#{messages.add_product}">Add</a></th>
                 </tr>
                 </thead>
                 <tbody>
@@ -29,7 +29,7 @@
                     <td th:text="${product.title}"></td>
                     <td th:text="${product.description}"></td>
                     <td th:text="${product.price}"></td>
-                    <td><a th:href="@{/products/{id}(id=${product.id})}">Edit</a></td>
+                    <td><a th:href="@{/products/{id}(id=${product.id})}" th:text="#{messages.edit}">Edit</a></td>
                 </tr>
                 </tbody>
             </table>

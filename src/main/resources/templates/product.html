@@ -11,32 +11,32 @@
 <div class="container">
     <div class="row">
         <div class="col-lg">
-            <h1>Product</h1>
+            <h1 th:text="#{messages.product}">Product</h1>
 
             <form th:action="@{/products}" th:object="${product}" method="post">
                 <input type="hidden" th:field="*{id}">
                 <div class="form-group">
-                    <label for="number">Number</label>
-                    <input type="text" class="form-control" id="number" th:placeholder="Number"
+                    <label for="number" th:text="#{messages.number}">Number</label>
+                    <input type="text" class="form-control" id="number" th:placeholder="#{messages.number}"
                            th:field="*{productNumber}" required autofocus>
                 </div>
                 <div class="form-group">
-                    <label for="title">Title</label>
-                    <input type="text" class="form-control" id="title" th:placeholder="Title"
+                    <label for="title" th:text="#{messages.title}">Title</label>
+                    <input type="text" class="form-control" id="title" th:placeholder="#{messages.title}"
                            th:field="*{title}" required>
                 </div>
                 <div class="form-group">
-                    <label for="description">Description</label>
-                    <input type="text" class="form-control" id="description" th:placeholder="Description"
+                    <label for="description" th:text="#{messages.description}">Description</label>
+                    <input type="text" class="form-control" id="description" th:placeholder="#{messages.description}"
                            th:field="*{description}" required>
                 </div>
                 <div class="form-group">
-                    <label for="price">Price</label>
-                    <input type="text" class="form-control" id="price" th:placeholder="Price"
+                    <label for="price" th:text="#{messages.price}">Price</label>
+                    <input type="text" class="form-control" id="price" th:placeholder="#{messages.price}"
                            th:field="*{price}" required>
                 </div>
-                <button type="submit" class="btn btn-primary">Save</button>
-                <a class="btn" th:href="@{/products}">Back</a>
+                <button type="submit" class="btn btn-primary" th:text="#{messages.save}">Save</button>
+                <a class="btn" th:href="@{/products}" th:text="#{messages.back}">Back</a>
             </form>
         </div>
     </div>

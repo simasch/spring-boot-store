@@ -19,7 +19,7 @@
                     <a class="nav-link" th:href="@{/}">Home</a>
                 </li>
                 <li class="nav-item active" th:class="${page == 'products'} ? 'nav-item active' : 'nav-item'">
-                    <a class="nav-link" th:href="@{/products}">Products</a>
+                    <a class="nav-link" th:href="@{/products}" th:text="#{messages.products}">Products</a>
                 </li>
             </ul>
             <form th:action="@{/products/search}" class="form-inline my-2 my-lg-0">
