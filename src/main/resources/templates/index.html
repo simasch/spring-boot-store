@@ -12,6 +12,29 @@
     <div class="row">
         <div class="col-lg">
             <h1>Welcome to the Store</h1>
+
+            <div class="row">
+                <div class="col-lg-4" th:each="product : ${products}">
+                    <div class="card" style="height: 320px;">
+                        <div class="card-body" style="height: 100%;">
+                            <h5 class="card-title" th:text="${product.title}"></h5>
+                            <p class="card-text">[[${product.description}]]</p>
+
+                            <table style="width: 100%;">
+                                <tr>
+                                    <td>No [[${product.productNumber}]]</td>
+                                    <td style="text-align: right;">CHF [[${product.price}]]</td>
+                                </tr>
+                            </table>
+
+                            <div style="vertical-align: bottom;">
+                                <a href="#" class="btn btn-primary">Add to basket</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
 </div>

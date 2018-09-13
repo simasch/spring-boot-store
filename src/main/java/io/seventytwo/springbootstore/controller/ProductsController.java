@@ -4,19 +4,17 @@ import io.seventytwo.springbootstore.entity.Product;
 import io.seventytwo.springbootstore.repository.ProductRepository;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @Controller
 @RequestMapping("/products")
-public class ProductController {
+public class ProductsController {
 
     private final ProductRepository productRepository;
 
-    public ProductController(ProductRepository productRepository) {
+    public ProductsController(ProductRepository productRepository) {
         this.productRepository = productRepository;
     }
 
@@ -38,5 +36,30 @@ public class ProductController {
 
             return "products";
         }
+    }
+
+    @GetMapping("/{id}")
+    public String get(@PathVariable Integer id, Model model) {
+        Product product = productRepository.getOne(id);
+
+        model.addAttribute("product", product);
+
+        return "product";
+    }
+
+    @GetMapping("/new")
+    public String add(Model model) {
+        Product product = new Product();
+
+        model.addAttribute("product", product);
+
+        return "product";
+    }
+
+    @PostMapping
+    public String save(Product product, Model model) {
+        productRepository.saveAndFlush(product);
+
+        return findAll(model);
     }
 }
